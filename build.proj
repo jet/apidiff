@@ -1,0 +1,25 @@
+<Project ToolsVersion="15.0">
+
+  <Import Project="Directory.Build.props" />
+
+  <Target Name="Restore">
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="Restore">
+    <Exec Command='dotnet build src/apidiff.sln -c Release' />
+  </Target>
+
+  <Target Name="Pack" DependsOnTargets="Restore">
+    <RemoveDir Directories="$(NupkgsDir)" />
+    <Exec Command='dotnet pack src/apidiff -c Release -o "$(NupkgsDir)" /p:Version=$(Version)' />
+  </Target>
+
+  <Target Name="Test">
+    <Exec Command='dotnet build tests/ApiDiff.Tests -c Release' />
+    <Exec Command='dotnet test tests/ApiDiff.Tests -c Release --logger:trx' IgnoreStandardErrorWarningFormat="true" />
+  </Target>
+
+  <Target Name="VSTest" DependsOnTargets="Test" />
+
+</Project>
+ 

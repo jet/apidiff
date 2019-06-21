@@ -1,0 +1,24 @@
+<Project ToolsVersion="15.0">
+
+  <PropertyGroup>
+    <VersionPrefix Condition=" '$(VersionPrefix)' == '' ">0.4.0</VersionPrefix>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RepoRootDir>$([System.IO.Path]::GetFullPath("$(MSBuildThisFileDirectory)"))</RepoRootDir>
+    <NupkgsDir>$([System.IO.Path]::GetFullPath("$(MSBuildThisFileDirectory)/bin/nupkg"))</NupkgsDir>
+    <MonoOrEmpty Condition=" '$(OS)' != 'Windows_NT' ">mono </MonoOrEmpty>
+
+    <Version Condition=" '$(Version)' == '' ">$(VersionPrefix)$(VersionSuffix)</Version>
+
+    <NoWarn>$(NoWarn);FS2003</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>enricosada</Authors>
+    <PackageTags>test;api</PackageTags>
+    <Copyright>JET.com</Copyright>
+    <PackageReleaseNotes>see $(PackageProjectUrl)?path=%2FCHANGELOG.md&amp;version=GBmaster</PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>

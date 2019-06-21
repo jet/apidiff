@@ -1,0 +1,9 @@
+TYPE: Lib1.Duck
+PROP: System.Tuple`2<System.Int32,System.Int32> Lib1.Duck::Position()
+METHOD: System.Void Lib1.Duck::.ctor()
+METHOD: System.String Lib1.Duck::Quack()
+METHOD: System.Void Lib1.Duck::Walk()
+TYPE: Lib1.Say
+METHOD: System.Void Lib1.Say::hello(System.String)
+TYPE: Lib1.Say/InItalian
+METHOD: System.Void Lib1.Say/InItalian::ciao(System.String)
