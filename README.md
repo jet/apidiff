@@ -47,6 +47,7 @@ This format:
 - Can be read by humans
 
 **NOTE** the `ApiDiff.apiDiff` use `git diff` to show differences, in a style familiar for developers
+
 **NOTE** `git` is required in PATH
 
 ## How to use
