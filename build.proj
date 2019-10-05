@@ -11,7 +11,7 @@
 
   <Target Name="Pack" DependsOnTargets="Restore">
     <RemoveDir Directories="$(NupkgsDir)" />
-    <Exec Command='dotnet pack src/apidiff -c Release -o "$(NupkgsDir)" /p:Version=$(Version)' />
+    <Exec Command='dotnet pack src/apidiff.sln -c Release -o "$(NupkgsDir)" /p:Version=$(Version)' />
   </Target>
 
   <Target Name="Test">
